@@ -1,0 +1,31 @@
+﻿@{
+    ViewData["Title"] = "Upload Documents";
+}
+
+<div class="container mt-5">
+    <h2 class="mb-4">Upload Supporting Documents</h2>
+
+    <form asp-controller="Home" asp-action="UploadDocuments" method="post" enctype="multipart/form-data">
+        <div class="form-group mb-3">
+            <label for="ClaimId">Claim ID</label>
+            <input type="number" class="form-control" id="ClaimId" name="ClaimId" placeholder="Enter Claim ID" required />
+        </div>
+
+        <div class="form-group mb-3">
+            <label for="Document">Select Document</label>
+            <input type="file" class="form-control" id="Document" name="Document" required />
+            <small class="form-text text-muted">
+                Accepted formats: PDF, Word, Excel, Image files.
+            </small>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Upload</button>
+        <a href="/Home/Index" class="btn btn-secondary">Back to Home</a>
+    </form>
+
+    <hr />
+
+    <div class="alert alert-info mt-3">
+        <strong>Note:</strong> This is a prototype page. The upload functionality will be implemented in the next stage.
+    </div>
+</div>
